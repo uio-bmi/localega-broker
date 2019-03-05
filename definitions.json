@@ -14,7 +14,7 @@
    ],
    "permissions":[
       {
-         "user":"guest",
+         "user":"USER_NAME",
          "vhost":"/",
          "configure":".*",
          "write":".*",
