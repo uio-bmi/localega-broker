@@ -25,9 +25,9 @@
     {
       "value": {
         "ack-mode": "on-confirm",
-        "queue": "v1.stableIDs",
+        "queue": "stableIDs",
         "trust-user-id": false,
-        "uri": "CEGA_CONNECTION"
+        "uri": "PUBLIC_CONNECTION"
       },
       "vhost": "/",
       "component": "federation-upstream",
@@ -36,9 +36,9 @@
     {
       "value": {
         "ack-mode": "on-confirm",
-        "queue": "v1.files",
+        "queue": "files",
         "trust-user-id": false,
-        "uri": "CEGA_CONNECTION"
+        "uri": "PUBLIC_CONNECTION"
       },
       "vhost": "/",
       "component": "federation-upstream",
@@ -96,16 +96,6 @@
   "exchanges": [
     {
       "name": "lega",
-      "vhost": "/",
-      "type": "topic",
-      "durable": true,
-      "auto_delete": false,
-      "internal": false,
-      "arguments": {
-      }
-    },
-    {
-      "name": "cega",
       "vhost": "/",
       "type": "topic",
       "durable": true,
