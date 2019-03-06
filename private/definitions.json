@@ -22,50 +22,8 @@
     }
   ],
   "parameters": [
-    {
-      "value": {
-        "ack-mode": "on-confirm",
-        "queue": "stableIDs",
-        "trust-user-id": false,
-        "uri": "PUBLIC_CONNECTION"
-      },
-      "vhost": "/",
-      "component": "federation-upstream",
-      "name": "CEGA-ids"
-    },
-    {
-      "value": {
-        "ack-mode": "on-confirm",
-        "queue": "files",
-        "trust-user-id": false,
-        "uri": "PUBLIC_CONNECTION"
-      },
-      "vhost": "/",
-      "component": "federation-upstream",
-      "name": "CEGA-files"
-    }
   ],
   "policies": [
-    {
-      "vhost": "/",
-      "name": "CEGA-files",
-      "pattern": "files",
-      "apply-to": "queues",
-      "definition": {
-        "federation-upstream": "CEGA-files"
-      },
-      "priority": 0
-    },
-    {
-      "vhost": "/",
-      "name": "CEGA-ids",
-      "pattern": "stableIDs",
-      "apply-to": "queues",
-      "definition": {
-        "federation-upstream": "CEGA-ids"
-      },
-      "priority": 0
-    }
   ],
   "queues": [
     {

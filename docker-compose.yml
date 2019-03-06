@@ -22,4 +22,3 @@ services:
     environment:
       - USER_NAME=admin
       - PASSWORD_HASH=4tHURqDiZzypw0NTvoHhpn8/MMgONWonWxgRZ4NXgR8nZRBz
-      - PUBLIC_CONNECTION=amqp://admin:guest@public-mq:5672
