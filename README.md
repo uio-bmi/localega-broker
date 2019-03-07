@@ -8,7 +8,17 @@ Environment variables used:
 
 | Variable name         | Description                                                |
 |-----------------------|------------------------------------------------------------|
+| USER_NAME             | Admin username for the current broker                      |
+| PASSWORD_HASH         | `rabbit_password_hashing_sha256` hash of the password      |
 | CEGA_CONNECTION       | Central EGA RabbitMQ broker URI (with credentials)         |
+| PRIVATE_CONNECTION    | Private LocalEGA RabbitMQ broker URI (with credentials)    |
+
+## Docker image for private RabbitMQ broker
+
+Environment variables used:
+
+| Variable name         | Description                                                |
+|-----------------------|------------------------------------------------------------|
 | USER_NAME             | Admin username for the current broker                      |
 | PASSWORD_HASH         | `rabbit_password_hashing_sha256` hash of the password      |
 
