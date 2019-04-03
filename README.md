@@ -1,6 +1,8 @@
 # localega-broker
 
-[![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/uiobmi/localega-broker.svg)](https://hub.docker.com/r/uiobmi/localega-broker)
+[![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/uiobmi/localega-broker-public.svg)](https://hub.docker.com/r/uiobmi/localega-broker-public)
+
+[![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/uiobmi/localega-broker-private.svg)](https://hub.docker.com/r/uiobmi/localega-broker-private)
 
 ## Docker image for public RabbitMQ broker
 
