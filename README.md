@@ -32,7 +32,7 @@ version: '3.3'
 services:
 
   public-mq:
-    image: uiobmi/localega-broker:public
+    image: uiobmi/localega-broker-public
     hostname: public-mq
     ports:
       - "5672:5672"
@@ -44,7 +44,7 @@ services:
       - CEGA_CONNECTION
 
   private-mq:
-    image: uiobmi/localega-broker:private
+    image: uiobmi/localega-broker-private
     hostname: private-mq
     ports:
       - "15673:15672"
