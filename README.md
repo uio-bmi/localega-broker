@@ -35,22 +35,31 @@ services:
     image: uiobmi/localega-broker-public
     hostname: public-mq
     ports:
-      - "5672:5672"
-      - "15672:15672"
+      - "5671:5671"
+      - "15671:15671"
     environment:
       - USER_NAME=admin
       - PASSWORD_HASH=4tHURqDiZzypw0NTvoHhpn8/MMgONWonWxgRZ4NXgR8nZRBz
-      - PRIVATE_CONNECTION=amqp://admin:guest@private-mq:5672
-      - CEGA_CONNECTION
+      - PRIVATE_CONNECTION=amqps://admin:guest@private-mq:5671/%2F?heartbeat=0\&connection_attempts=30\&retry_delay=10\&server_name_indication=privateMQ\&verify=verify_peer\&fail_if_no_peer_cert=true\&cacertfile=/etc/rabbitmq/CA.cert\&certfile=/etc/rabbitmq/ssl.cert\&keyfile=/etc/rabbitmq/ssl.key
+      - CEGA_CONNECTION=
+    volumes:
+      - ./ssl/CA.cert:/etc/rabbitmq/CA.cert
+      - ./ssl/publicMQ.cert:/etc/rabbitmq/ssl.cert
+      - ./ssl/publicMQ.key:/etc/rabbitmq/ssl.key
 
   private-mq:
     image: uiobmi/localega-broker-private
     hostname: private-mq
     ports:
-      - "15673:15672"
+      - "15670:15671"
     environment:
       - USER_NAME=admin
       - PASSWORD_HASH=4tHURqDiZzypw0NTvoHhpn8/MMgONWonWxgRZ4NXgR8nZRBz
+    volumes:
+      - ./ssl/CA.cert:/etc/rabbitmq/CA.cert
+      - ./ssl/privateMQ.cert:/etc/rabbitmq/ssl.cert
+      - ./ssl/privateMQ.key:/etc/rabbitmq/ssl.key
+
 ```
 
 Run `docker-compose up -d` to test it.
