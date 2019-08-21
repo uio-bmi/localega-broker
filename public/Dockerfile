@@ -4,6 +4,8 @@ RUN rabbitmq-plugins enable --offline rabbitmq_federation rabbitmq_federation_ma
 
 COPY entrypoint.sh /usr/local/bin/ega-entrypoint.sh
 
+RUN /usr/local/bin/ega-entrypoint.sh
+
 RUN chmod +x /usr/local/bin/ega-entrypoint.sh
 
 COPY definitions.json /etc/rabbitmq/definitions.json
