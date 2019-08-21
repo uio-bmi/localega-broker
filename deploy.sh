@@ -11,6 +11,6 @@
   docker config create CA.cert CA.cert
   docker config create mq.cert mq.cert
   docker config create mq.key mq.key
-  docker build -t uiobmi/localega-broker-public:latest public
+  docker build --no-cache -t uiobmi/localega-broker-public:latest public
   docker stack deploy MQ --compose-file docker-stack.yml
 #fi
