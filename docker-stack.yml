@@ -3,7 +3,7 @@ version: '3.3'
 services:
 
   mq:
-    image: uiobmi/localega-broker-public:latest
+    image: uiobmi/localega-broker-public:uh
     ports:
       - "5671:5671"
       - "15671:15671"
