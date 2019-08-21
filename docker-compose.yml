@@ -11,7 +11,7 @@ services:
     environment:
       - USER_NAME=admin
       - PASSWORD_HASH=4tHURqDiZzypw0NTvoHhpn8/MMgONWonWxgRZ4NXgR8nZRBz
-      - PRIVATE_CONNECTION=amqps://admin:guest@private-mq:5671/%2F?heartbeat=0\&connection_attempts=30\&retry_delay=10\&server_name_indication=privateMQ\&verify=verify_peer\&fail_if_no_peer_cert=true\&cacertfile=/etc/rabbitmq/CA.cert\&certfile=/etc/rabbitmq/ssl.cert\&keyfile=/etc/rabbitmq/ssl.key
+      - PRIVATE_CONNECTION=amqps://admin:guest@private-mq:5671/%2F?heartbeat=0\&connection_attempts=30\&retry_delay=10\&server_name_indication=disable\&verify=verify_peer\&fail_if_no_peer_cert=true\&cacertfile=/etc/rabbitmq/CA.cert\&certfile=/etc/rabbitmq/ssl.cert\&keyfile=/etc/rabbitmq/ssl.key
       - CEGA_CONNECTION=
     volumes:
       - ./ssl/CA.cert:/etc/rabbitmq/CA.cert
