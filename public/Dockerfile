@@ -1,5 +1,7 @@
 FROM rabbitmq:3.7.8-management-alpine
 
+RUN apk add perl
+
 RUN rabbitmq-plugins enable --offline rabbitmq_federation rabbitmq_federation_management rabbitmq_shovel rabbitmq_shovel_management
 
 COPY entrypoint.sh /usr/local/bin/ega-entrypoint.sh
