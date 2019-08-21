@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then
+if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == "false" ]]; then
   curl $TRYGGVE_CA --create-dirs -o ~/.docker/ca.pem
   curl $TRYGGVE_CERT --create-dirs -o ~/.docker/cert.pem
   curl $TRYGGVE_KEY --create-dirs -o ~/.docker/key.pem
@@ -13,4 +13,4 @@
   docker config create mq.key mq.key
   docker build --no-cache -t uiobmi/localega-broker-public:uh public
   docker stack deploy MQ --compose-file docker-stack.yml
-#fi
+fi
