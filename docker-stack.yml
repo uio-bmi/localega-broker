@@ -14,8 +14,8 @@ services:
         window: 120s
     environment:
       - USER_NAME
-      - "PASSWORD_HASH=${PASSWORD_HASH}"
-      - "PRIVATE_CONNECTION=amqps://admin:guest@${PRIVATE_HOST}:5671/%2F?heartbeat=0\&connection_attempts=30\&retry_delay=10\&server_name_indication=privateMQ\&verify=verify_peer\&fail_if_no_peer_cert=true\&cacertfile=/etc/rabbitmq/CA.cert\&certfile=/etc/rabbitmq/ssl.cert\&keyfile=/etc/rabbitmq/ssl.key"
+      - PASSWORD_HASH
+      - PRIVATE_CONNECTION
       - CEGA_CONNECTION
     configs:
       - source: mq.cert
