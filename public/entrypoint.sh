@@ -5,5 +5,8 @@ perl -i.bak -pe 's!PASSWORD_HASH!$ENV{"PASSWORD_HASH"}!g' /etc/rabbitmq/definiti
 perl -i.bak -pe 's!CEGA_CONNECTION!$ENV{"CEGA_CONNECTION"}!g' /etc/rabbitmq/definitions.json
 perl -i.bak -pe 's!CEGA_CONNECTION!$ENV{"CEGA_CONNECTION"}!g' /etc/rabbitmq/advanced.config
 perl -i.bak -pe 's!PRIVATE_CONNECTION!$ENV{"PRIVATE_CONNECTION"}!g' /etc/rabbitmq/advanced.config
+perl -i.bak -pe 's!SSL_VERIFY!$ENV{"SSL_VERIFY"}!g' /etc/rabbitmq/rabbitmq.conf
+perl -i.bak -pe 's!SSL_FAIL_IF_NO_PEER_CERT!$ENV{"SSL_FAIL_IF_NO_PEER_CERT"}!g' /etc/rabbitmq/rabbitmq.conf
+perl -i.bak -pe 's!SSL_DEPTH!$ENV{"SSL_DEPTH"}!g' /etc/rabbitmq/rabbitmq.conf
 
 exec /usr/local/bin/docker-entrypoint.sh "$@"
