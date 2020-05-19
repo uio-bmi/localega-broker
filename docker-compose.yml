@@ -29,6 +29,9 @@ services:
     environment:
       - USER_NAME=admin
       - PASSWORD_HASH=4tHURqDiZzypw0NTvoHhpn8/MMgONWonWxgRZ4NXgR8nZRBz
+      - SSL_VERIFY=verify_peer
+      - SSL_FAIL_IF_NO_PEER_CERT=true
+      - SSL_DEPTH=2
     volumes:
       - ./ssl/CA.cert:/etc/rabbitmq/CA.cert
       - ./ssl/privateMQ.cert:/etc/rabbitmq/ssl.cert
