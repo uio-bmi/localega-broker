@@ -77,6 +77,14 @@
       }
     },
     {
+      "name": "mappings",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+      }
+    },
+    {
       "name": "files",
       "vhost": "/",
       "durable": true,
