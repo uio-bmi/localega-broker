@@ -61,16 +61,6 @@
   ],
   "exchanges": [
     {
-      "name": "cega",
-      "vhost": "/",
-      "type": "topic",
-      "durable": true,
-      "auto_delete": false,
-      "internal": false,
-      "arguments": {
-      }
-    },
-    {
       "name": "lega",
       "vhost": "/",
       "type": "topic",
