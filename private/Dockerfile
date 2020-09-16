@@ -12,8 +12,6 @@ COPY definitions.json /etc/rabbitmq/definitions.json
 
 COPY rabbitmq.conf /etc/rabbitmq/rabbitmq.conf
 
-RUN chown -R 100:101 /etc/rabbitmq
-
 ENTRYPOINT ["/usr/local/bin/ega-entrypoint.sh"]
 
 CMD ["rabbitmq-server"]
