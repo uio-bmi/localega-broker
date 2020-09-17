@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Inserting env-variables to the config-files..."
+
 perl -i.bak -pe 's!USER_NAME!$ENV{"USER_NAME"}!g' /etc/rabbitmq/definitions.json
 perl -i.bak -pe 's!PASSWORD_HASH!$ENV{"PASSWORD_HASH"}!g' /etc/rabbitmq/definitions.json
 perl -i.bak -pe 's!SSL_VERIFY!$ENV{"SSL_VERIFY"}!g' /etc/rabbitmq/rabbitmq.conf
