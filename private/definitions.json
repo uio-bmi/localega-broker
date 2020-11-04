@@ -9,13 +9,13 @@
   ],
   "vhosts": [
     {
-      "name": "/"
+      "name": "VIRTUAL_HOST"
     }
   ],
   "permissions": [
     {
       "user": "USER_NAME",
-      "vhost": "/",
+      "vhost": "VIRTUAL_HOST",
       "configure": ".*",
       "write": ".*",
       "read": ".*"
@@ -27,16 +27,8 @@
   ],
   "queues": [
     {
-      "name": "mappings",
-      "vhost": "/",
-      "durable": true,
-      "auto_delete": false,
-      "arguments": {
-      }
-    },
-    {
-      "name": "stableIDs",
-      "vhost": "/",
+      "name": "ingest",
+      "vhost": "VIRTUAL_HOST",
       "durable": true,
       "auto_delete": false,
       "arguments": {
@@ -44,15 +36,47 @@
     },
     {
       "name": "archived",
-      "vhost": "/",
+      "vhost": "VIRTUAL_HOST",
       "durable": true,
       "auto_delete": false,
       "arguments": {
       }
     },
     {
-      "name": "files",
-      "vhost": "/",
+      "name": "verified",
+      "vhost": "VIRTUAL_HOST",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+      }
+    },
+    {
+      "name": "completed",
+      "vhost": "VIRTUAL_HOST",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+      }
+    },
+    {
+      "name": "accessionIDs",
+      "vhost": "VIRTUAL_HOST",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+      }
+    },
+    {
+      "name": "mappings",
+      "vhost": "VIRTUAL_HOST",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+      }
+    },
+    {
+      "name": "error",
+      "vhost": "VIRTUAL_HOST",
       "durable": true,
       "auto_delete": false,
       "arguments": {
@@ -61,18 +85,8 @@
   ],
   "exchanges": [
     {
-      "name": "cega",
-      "vhost": "/",
-      "type": "topic",
-      "durable": true,
-      "auto_delete": false,
-      "internal": false,
-      "arguments": {
-      }
-    },
-    {
-      "name": "lega",
-      "vhost": "/",
+      "name": "sda",
+      "vhost": "VIRTUAL_HOST",
       "type": "topic",
       "durable": true,
       "auto_delete": false,
@@ -83,11 +97,65 @@
   ],
   "bindings": [
     {
-      "source": "lega",
-      "vhost": "/",
+      "source": "sda",
+      "vhost": "VIRTUAL_HOST",
+      "destination": "ingest",
+      "destination_type": "queue",
+      "routing_key": "ingest",
+      "arguments": {
+      }
+    },
+    {
+      "source": "sda",
+      "vhost": "VIRTUAL_HOST",
       "destination": "archived",
       "destination_type": "queue",
       "routing_key": "archived",
+      "arguments": {
+      }
+    },
+    {
+      "source": "sda",
+      "vhost": "VIRTUAL_HOST",
+      "destination": "verified",
+      "destination_type": "queue",
+      "routing_key": "verified",
+      "arguments": {
+      }
+    },
+    {
+      "source": "sda",
+      "vhost": "VIRTUAL_HOST",
+      "destination": "completed",
+      "destination_type": "queue",
+      "routing_key": "completed",
+      "arguments": {
+      }
+    },
+    {
+      "source": "sda",
+      "vhost": "VIRTUAL_HOST",
+      "destination": "accessionIDs",
+      "destination_type": "queue",
+      "routing_key": "accessionIDs",
+      "arguments": {
+      }
+    },
+    {
+      "source": "sda",
+      "vhost": "VIRTUAL_HOST",
+      "destination": "mappings",
+      "destination_type": "queue",
+      "routing_key": "mappings",
+      "arguments": {
+      }
+    },
+    {
+      "source": "sda",
+      "vhost": "VIRTUAL_HOST",
+      "destination": "error",
+      "destination_type": "queue",
+      "routing_key": "error",
       "arguments": {
       }
     }
