@@ -137,7 +137,7 @@
       "vhost": "VIRTUAL_HOST",
       "destination": "accessionIDs",
       "destination_type": "queue",
-      "routing_key": "accessionIDs",
+      "routing_key": "accession",
       "arguments": {
       }
     },
@@ -146,7 +146,7 @@
       "vhost": "VIRTUAL_HOST",
       "destination": "mappings",
       "destination_type": "queue",
-      "routing_key": "mappings",
+      "routing_key": "mapping",
       "arguments": {
       }
     },
