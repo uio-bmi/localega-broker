@@ -27,6 +27,14 @@
   ],
   "queues": [
     {
+      "name": "inbox",
+      "vhost": "VIRTUAL_HOST",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+      }
+    },
+    {
       "name": "ingest",
       "vhost": "VIRTUAL_HOST",
       "durable": true,
@@ -96,6 +104,15 @@
     }
   ],
   "bindings": [
+    {
+      "source": "sda",
+      "vhost": "VIRTUAL_HOST",
+      "destination": "inbox",
+      "destination_type": "queue",
+      "routing_key": "files.inbox",
+      "arguments": {
+      }
+    },
     {
       "source": "sda",
       "vhost": "VIRTUAL_HOST",
