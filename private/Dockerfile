@@ -1,4 +1,4 @@
-FROM rabbitmq:3.7.8-management-alpine
+FROM rabbitmq:3.7.13-management-alpine
 
 RUN apk add perl
 
