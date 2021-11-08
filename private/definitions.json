@@ -27,6 +27,14 @@
   ],
   "queues": [
     {
+      "name": "inbox",
+      "vhost": "VIRTUAL_HOST",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+      }
+    },
+    {
       "name": "ingest",
       "vhost": "VIRTUAL_HOST",
       "durable": true,
